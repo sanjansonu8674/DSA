@@ -1,34 +1,29 @@
-
+// Online C++ compiler to run C++ program online
 #include <iostream>
 #include <vector>
 using namespace std;
-void selection(vector<int> &arr)
-{
-    for (int i = 0; i < arr.size() - 1; i++)
-    {
 
-        int j = i + 1, minIndex = i;
-        while (j < arr.size())
-        {
-            // This is increasing order if you want decreasing order just change sign < to > in 'if' statement
-            if (arr[j] > arr[minIndex])
-            {
-                minIndex = j;
+
+void selectionSort(vector<int> &arr) {
+    int tamp;
+        for(int i = 0; i < arr.size()-1; i++){
+            for(int j = i+1; j < arr.size(); j++){
+                if(arr[i]> arr[j]){
+                    tamp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = tamp;
+                    //swap(arr[i],arr[j]);
+                }
             }
-            j++;
         }
-        swap(arr[i], arr[minIndex]);
     }
-}
 
-int main()
-{
-    vector<int> arr = {8, 6, 1, 59, 4, -25, 9, 34};
-    selection(arr);
-    cout<< "Sorted Array: ";
-    for (int i = 0; i < arr.size(); i++)
-    {
-        cout <<arr[i] << " ";
-    }
+
+int main() {
+    vector<int> arr = {3,4,4,5,1,6,6,2}; 
+    for(int i = 0; i< arr.size(); i++) cout<<arr[i];
+    cout<<endl;
+    selectionSort(arr);
+    for(int i = 0; i< arr.size(); i++) cout<<arr[i];
     return 0;
 }
