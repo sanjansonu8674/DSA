@@ -22,7 +22,6 @@ char uppercase(char ch){
     }
 }
 
-
 int main() {
     cout<<"Lower case: "<< lowercase('R')<<endl;
     cout<<"Upper case: "<< uppercase('r')<<endl;
