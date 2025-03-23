@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <vector>
-                                                                                                                                                                                                                          using namespace std;
+using namespace std;                                                                                                                                                                                                           using namespace std;
 int BinarySearch(vector<int> &arr, int target)
 {
     int start = 0, end = arr.size() - 1;
@@ -26,6 +26,7 @@ int BinarySearch(vector<int> &arr, int target)
             start = mid + 1;
         }
     }
+    return -1;
 }
 int main()
 {
